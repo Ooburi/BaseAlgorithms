@@ -12,14 +12,16 @@
         {
             // example of using an algorithm
             int[] arr = { 0,2,1, 7, 3, 9, 2, 7, 1, 5, 6, 7, 7, 7, 4, 22, 1, 41, 8 };
-            
-            foreach(int i in InsertionSortUp(arr))
+            InsertionSortUp(arr);
+
+            foreach (int i in arr)
             {
                 Console.Write(i +",");
             }
             Console.WriteLine();
+            InsertionSortDown(arr);
 
-            foreach (int i in InsertionSortDown(arr))
+            foreach (int i in arr)
             {
                 Console.Write(i + ",");
             }
@@ -28,7 +30,7 @@
             Console.ReadLine();
         }
 
-        static int[] InsertionSortUp(int[] array)
+        static void InsertionSortUp(int[] array)
         {
             for(int j = 1; j < array.Length; j++)
             {
@@ -41,10 +43,8 @@
                 }
                 array[i + 1] = key;
             }
-
-            return array;
         }
-        static int[] InsertionSortDown(int[] array)
+        static void InsertionSortDown(int[] array)
         {
             for (int j = 1; j < array.Length; j++)
             {
@@ -57,8 +57,6 @@
                 }
                 array[i + 1] = key;
             }
-
-            return array;
         }
     }
 }
